@@ -15,7 +15,7 @@ namespace com.clusterrr.Famicom.DumperConnection
     {
         readonly string[] DEVICE_NAMES = new string[] { "Famicom Dumper/Programmer", "Famicom Dumper/Writer" };
         const uint TIMEOUT = 10000;
-        const uint BAUDRATE = 250000;
+        const uint BAUDRATE = 255600;
 
         public byte ProtocolVersion { get; private set; } = 0;
         public Version FirmwareVersion { get; private set; } = null;
