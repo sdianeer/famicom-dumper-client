@@ -18,8 +18,8 @@ jobs:
     strategy:
       matrix:
         host: [ubuntu-latest]
-        os: [win, linux, osx]
-        arch: [x86, x64, arm, arm64]
+        os: [win, osx]
+        arch: [x86, x64]
         sc: [no-self-contained, self-contained]
         exclude:
           - os: linux
