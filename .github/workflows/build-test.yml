@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         host: [ubuntu-latest]
-        os: [win, osx]
+        os: [win]
         arch: [x86, x64]
         sc: [no-self-contained, self-contained]
         exclude:
@@ -38,7 +38,7 @@ jobs:
       OUTPUT_FILE: famicom-dumper-${{ matrix.os }}-${{ matrix.arch }}${{ matrix.sc == 'self-contained' && '-self-contained' || '' }}.${{ matrix.os == 'win' && 'zip' || 'tar.gz' }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Checkout submodules
       run: git submodule update --init --recursive
     - name: Setup .NET
