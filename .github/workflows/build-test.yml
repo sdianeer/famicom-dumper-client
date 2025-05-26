@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download artifacts
-      uses: actions/download-artifact@v4.1.7
+      uses: actions/download-artifact@v4
     - name: Move files to the root
       run: find -mindepth 2 -exec mv {} . \;
     - name: Remove empty directories
@@ -78,10 +78,10 @@ jobs:
     - name: Generate index.html
       run: "(echo \"<html><head><title>Famicom Dumper Client</title></head><body>Updated: `date`<br/><br/>\" ; for file in famicom-dumper-* ; do echo \"<a href='$file'>$file</a><br/>\" ; done ; echo \"</body></html>\") > index.html"
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         path: '.'
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v3
+      uses: actions/deploy-pages@v4
       if: github.event_name != 'pull_request'
