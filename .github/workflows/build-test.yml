@@ -78,7 +78,7 @@ jobs:
     - name: Generate index.html
       run: "(echo \"<html><head><title>Famicom Dumper Client</title></head><body>Updated: `date`<br/><br/>\" ; for file in famicom-dumper-* ; do echo \"<a href='$file'>$file</a><br/>\" ; done ; echo \"</body></html>\") > index.html"
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v3
       with:
         path: '.'
     - name: Deploy to GitHub Pages
