@@ -36,8 +36,8 @@ jobs:
       OUTPUT_FILE: famicom-dumper-${{ matrix.os }}-${{ matrix.arch }}${{ matrix.sc == 'self-contained' && '-self-contained' || '' }}.${{ matrix.os == 'win' && 'zip' || 'tar.gz' }}
     strategy:
       matrix:
-        os: [win, linux, osx]
-        arch: [x86, x64, arm, arm64]
+        os: [win]
+        arch: [x86, x64]
         sc: [no-self-contained, self-contained]
         exclude:
           - os: linux
